@@ -14,13 +14,12 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--font-family-main), sans-serif;
-  font-variation-settings: 'wght' var(--font-weight-normal);
+  font-variation-settings: "wght" var(--font-weight-normal);
   background-image: var(--background-image);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  
 }
 
 .header {
@@ -29,8 +28,6 @@
   align-items: center;
   font-family: var(--font-family-accent), sans-serif;
   margin-block-start: 6.3em;
-  
-  
 }
 
 .header__content {
@@ -39,11 +36,9 @@
   justify-content: center;
   align-items: center;
   border: 2px solid var(--main-color, #000);
-  /*inline-size: 48.59vw;
-  block-size: 25.5vw;*/
   inline-size: var(--inline-size-content);
   block-size: var(--block-size-header);
- background-color: var(--background-color);
+  background-color: var(--background-color);
   gap: 1.2em;
 }
 
@@ -51,7 +46,6 @@
   inline-size: var(--inline-size-content);
   min-block-size: min-content; /**/
 }
-
 
 .header__content .title {
   line-height: 100%;
@@ -61,21 +55,15 @@
 .header__title {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   text-transform: uppercase;
-  
-
 }
 
 .header__subtitle {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   font-weight: var(--font-weight-normal);
- 
 }
-
-
 
 .title {
   line-height: 100%;
-  
 }
 
 .content {
@@ -88,19 +76,18 @@
 }
 
 .card {
-justify-self: center;
-display: grid;
-grid-template-columns: 1fr;
-grid-template-rows: repeat(3, min-content);
+  justify-self: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, min-content);
 }
 
 .card__title {
-  font-variation-settings: 'wght' var(--font-weight-bold);
+  font-variation-settings: "wght" var(--font-weight-bold);
   padding-inline: 10px;
   padding-block: 7px;
   grid-row: 1 / 2;
   background-color: var(--background-color);
-  
 }
 
 .content__border {
@@ -109,16 +96,11 @@ grid-template-rows: repeat(3, min-content);
 
 .content .title {
   font-size: 18px;
-  
 }
 
 .content__text-wrapper {
   background-color: var(--background-color);
 }
-
-/*.card__image {
-  grid-row: 2 / 3;
-}*/
 
 .content__text {
   grid-row: 3 / 4;
@@ -152,7 +134,7 @@ grid-template-rows: repeat(3, min-content);
   position: relative;
   align-self: self-end;
   gap: 6px;
-} 
+}
 
 .button__text {
   position: relative;
@@ -166,7 +148,7 @@ grid-template-rows: repeat(3, min-content);
 }
 
 .card__like-button .button__text {
-   padding: 10px 35px;
+  padding: 10px 35px;
 }
 
 .card__like-button {
@@ -184,13 +166,13 @@ grid-template-rows: repeat(3, min-content);
 }
 
 .card__icon-button {
- align-self: start;
- width: 39px;
- height: 38px;
- padding: 0;
- cursor: pointer;
- border: 2px solid transparent;
- transition: border-color 0.3s ease;
+  align-self: start;
+  width: 39px;
+  height: 38px;
+  padding: 0;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
 }
 
 .content__decor {
@@ -217,7 +199,7 @@ grid-template-rows: repeat(3, min-content);
   right: 25px;
   mix-blend-mode: hard-light;
   text-shadow: 1px 1px 0px var(--background-color),
-  -1px -1px 0px var(--background-color);
+    -1px -1px 0px var(--background-color);
 }
 
 .drama-filter {
@@ -225,7 +207,7 @@ grid-template-rows: repeat(3, min-content);
 }
 
 .desperate-filter {
-filter: contrast(20%);
+  filter: contrast(20%);
 }
 
 .distracted-filter {
@@ -252,9 +234,10 @@ filter: contrast(20%);
   filter: contrast(1.5) brightness(130%);
 }
 
-
-
-@supports((text-stroke: 1px var(--background-color)) or (-webkit-text-stroke: 1px var(--background-color))) {
+@supports (
+  (text-stroke: 1px var(--background-color)) or
+    (-webkit-text-stroke: 1px var(--background-color))
+) {
   .watermark {
     -webkit-text-stroke: 1px var(--background-color);
     text-stroke: 1px var(--background-color);
@@ -270,16 +253,16 @@ filter: contrast(20%);
 }
 
 .save__button {
-display: flex;
-inline-size: 340px;
-block-size: 55px;
-border: 2px solid var(--main-color, #000);
-justify-content: center;
-align-items: center;
-gap: 8px;
-background-color: var(--background-color);
-position: relative;
-overflow: hidden;
+  display: flex;
+  inline-size: 340px;
+  block-size: 55px;
+  border: 2px solid var(--main-color, #000);
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--background-color);
+  position: relative;
+  overflow: hidden;
 }
 
 .floppy-icon {
@@ -292,14 +275,14 @@ overflow: hidden;
 }
 
 .popup-card[open] {
-display: flex;
-flex-direction: column;
-gap: 30px;
-max-inline-size: 353px;
-inline-size: 80%;
-min-inline-size: 341px;
-justify-content: center;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-inline-size: 353px;
+  inline-size: 80%;
+  min-inline-size: 341px;
+  justify-content: center;
+  align-items: center;
 }
 
 .popup-card::backdrop {
@@ -333,45 +316,8 @@ align-items: center;
   aspect-ratio: 1 / 1;
 }
 
-@media (width <= 375px) {
-  .header__content {
-    block-size: 20.45em;
-  }
-
-  .title {
-    line-height: 120%;
-  }
-
-  .card__title {
-    padding-block: 5px;
-  }
-
-  .card__text {
-    padding-inline: 26px;
-  }
-
-  .card__buttons {
-    margin-block: 25px 20px;
-  }
-
-  .save__button {
-    flex-direction: column;
-    block-size: 5.4em;
-    inline-size: 19.5em;
-    gap: 9px;
-  }
-
-  .floppy-icon {
-    block-size: 28px;
-    inline-size: 28px;
-  }
-
-  .watermark {
-    right: 12px;
-  }
-}
-
-.button__popup.content__button, .content__button .content__border {
+.button__popup.content__button,
+.content__button .content__border {
   border: 2px solid var(--main-color, #000);
 }
 
@@ -391,8 +337,10 @@ align-items: center;
   transition: box-shadow 0.3s ease;
 }
 
-.card__like-button::before, .save__button::before, .button__popup::before {
- content: '';
+.card__like-button::before,
+.save__button::before,
+.button__popup::before {
+  content: "";
   position: absolute;
   inset: 0;
   background-color: var(--main-color, #000);
@@ -407,95 +355,144 @@ align-items: center;
   transform: translateX(0%);
 }
 
-
-
-  /*ПЕРЕНЕСТИ ОТСЮДАВА ПО МЕСТАМ*/
-  
-
 .card__icon-button:focus-visible {
-    border: 2px solid var(--main-color, #000);
-  }
+  border: 2px solid var(--main-color, #000);
+}
 
-  .sparks {
-    opacity: 0%;
-  }
+.sparks {
+  opacity: 0%;
+}
 
 .core {
-    transition: fill 0.3s 0.03s;
-  }
+  transition: fill 0.3s 0.03s;
+}
 
 .main-body {
-    transition: fill 0.3s 0.05s;
-  }
+  transition: fill 0.3s 0.05s;
+}
 
-  .card__icon-button:hover .core,
-  .card__icon-button:hover .main-body {
+.card__icon-button:hover .core,
+.card__icon-button:hover .main-body {
   fill: var(--contour-color);
-  }
+}
 
-  .card__icon-button:not(:hover) .main-body {
-    transition-delay: 0;
-  }
+.card__icon-button:not(:hover) .main-body {
+  transition-delay: 0;
+}
 
-  .card__icon-button:active .core,
-  .card__icon-button:active .main-body {
+.card__icon-button:active .core,
+.card__icon-button:active .main-body {
   fill: var(--animation-fill-color);
+}
+
+.like-icon.is-liked .core,
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+}
+
+.contour {
+  transition: fill 0.3s 0.06s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
+}
+
+@keyframes heart-scale {
+  0% {
+    transform: scale(1);
   }
 
-  .like-icon.is-liked .core,
-  .like-icon.is-liked .main-body {
-    fill: var(--animation-fill-color);
+  50% {
+    transform: scale(1.25);
   }
 
-  .contour {
-    transition: fill 0.3s 0.06s;
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes sparks-opacity {
+  0% {
+    opacity: 0;
   }
 
-  .like-icon.is-liked .contour {
-    fill: var(--animation-fill-color);
+  50% {
+    opacity: 1;
   }
 
-  @keyframes heart-scale {
-    0% {
-        transform: scale(1);
-    }
+  100% {
+    opacity: 0;
+  }
+}
 
-    50% {
-        transform: scale(1.25);
-      }
+.like-icon.is-liked {
+  animation: heart-scale 0.3s ease-in 0.1s;
+}
 
-     100% {
-        transform: scale(1);
-      }
-    }
+.like-icon.is-liked .sparks {
+  animation: sparks-opacity 0.3s ease-in 0.3s;
+}
 
-    @keyframes sparks-opacity {
-      0% {
-          opacity: 0;
-      }
-  
-      50% {
-          opacity: 1;
-        }
-  
-       100% {
-         opacity: 0;
-        }
-      }
+.like-icon:not(.is-liked) .contour {
+  transition: fill 0.1s linear;
+}
 
-    .like-icon.is-liked {
-      animation: heart-scale 0.3s ease-in 0.1s;
-    }
+@media (width <= 375px) {
+  .header__content {
+    block-size: 20.45em;
+  }
 
-    .like-icon.is-liked .sparks {
-    animation: sparks-opacity 0.3s ease-in 0.3s;
-    }
+  .content__decor {
+    block-size: 23.2em;
+    inline-size: 23.5em;
+  }
 
-    .like-icon:not(.is-liked) .contour {
-      transition: fill 0.1s linear;
-    }
-    
+  .content {
+    gap: 51px;
+  }
 
- 
+  .title {
+    line-height: 120%;
+  }
 
-  
+  .card__title {
+    padding-block: 5px;
+  }
+
+  .card__text {
+    padding-inline: 26px;
+  }
+
+  .card__text:last-child {
+    padding-block-end: 1.5em;
+  }
+
+  .card__text:first-child {
+    margin-block-start: 25px;
+  }
+
+  .card__buttons {
+    margin-block: 19px 22.5px;
+  }
+
+  .save__button {
+    flex-direction: column;
+    block-size: 5.4em;
+    inline-size: 19.5em;
+    gap: 9px;
+  }
+
+  .floppy-icon {
+    block-size: 28px;
+    inline-size: 28px;
+  }
+
+  .watermark {
+    right: 12px;
+  }
+
+  .card:last-child .card__buttons {
+    margin-block: 20px 30.5px;
+  }
+}
