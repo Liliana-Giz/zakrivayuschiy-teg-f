@@ -1,1 +1,36 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --font-family-main: Inter-Variable;
+  --font-family-accent: 'Press Start 2P';
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --main-color: rgba(0, 0, 0, 1);
+  --background-color: rgba(255, 255, 255, 1);
+  --inline-size-content: 43.75rem;
+  --block-size-header: 23em;
+  --contour-color: black;
+  --animation-fill-color: #FF0000;
+  --core-color: white;
+  --background-image: repeating-linear-gradient(
+    to right, 
+    #d3d3d3 0 2px, 
+    transparent 2px 4px
+  ),
+  repeating-linear-gradient(
+    to bottom, 
+    #d3d3d3 0 2px, 
+    transparent 2px 4px
+  ),
+  linear-gradient(
+    to bottom, 
+    #e7e7e7 0.01%, 
+    #1a1a1a 100%
+  );
+}
+
+@media (width <= 375px) {
+:root {
+  --inline-size-content: 23.5em;
+}
+}
+
