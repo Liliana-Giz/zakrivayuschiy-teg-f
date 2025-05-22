@@ -37,14 +37,15 @@
   align-items: center;
   border: 2px solid var(--main-color, #000);
   inline-size: var(--inline-size-content);
-  block-size: var(--block-size-header);
+  padding-block: 8em;
   background-color: var(--background-color);
   gap: 1.2em;
 }
 
 .content-size {
-  inline-size: var(--inline-size-content);
-  min-block-size: min-content; /**/
+  inline-size: 100%;
+  max-inline-size: var(--inline-size-content);
+  min-inline-size: auto;
 }
 
 .header__content .title {
@@ -71,7 +72,7 @@
   grid-template-columns: 1fr;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 49px;
   margin-block-start: 6.1em;
 }
 
@@ -110,18 +111,27 @@
   padding-inline: 25px;
   font-size: 18px;
   line-height: 1.16;
+  margin-block-start: 26px;
 }
 
 .card__text:first-child {
-  margin-block: 24px 29px;
-}
-
-.card__text:last-child {
-  padding-block-end: 0;
+  margin-block-end: 29px;
 }
 
 .content__button {
-  background-color: transparent;
+  background-color: var(--background-color);
+  border: 2px solid var(--main-color);
+  color: var(--background-color);
+  font-family: var(--font-family-accent);
+  font-size: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  display: flex;
+  line-height: 90%;
 }
 
 .card__buttons {
@@ -129,56 +139,46 @@
   justify-self: end;
   display: flex;
   align-items: end;
-  margin-block-start: 24px;
-  margin-block-end: 25px;
-  position: relative;
+  margin-block-start: 26px;
+  margin-block-end: 21px;
   align-self: self-end;
-  gap: 6px;
+  gap: 5px;
 }
 
 .button__text {
   position: relative;
-  background-color: transparent;
-  font-family: var(--font-family-accent);
-  font-size: 14px;
-  line-height: 90%;
-  color: var(--background-color);
   mix-blend-mode: difference;
   z-index: 1;
-}
-
-.card__like-button .button__text {
-  padding: 10px 35px;
 }
 
 .card__like-button {
   block-size: 38px;
   inline-size: 130px;
-  margin-inline-end: 1.6em;
+  margin-inline-end: 1.69em;
   padding-inline: 0;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-  display: flex;
   align-self: flex-start;
   justify-content: center;
   align-items: center;
 }
 
+
 .card__icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   align-self: start;
-  width: 39px;
-  height: 38px;
+  height: 39px;
   padding: 0;
-  cursor: pointer;
   border: 2px solid transparent;
   transition: border-color 0.3s ease;
 }
 
 .content__decor {
   position: relative;
-  block-size: 43.5rem;
-  inline-size: 43.75rem;
+  max-block-size: 43.5rem;
+  max-inline-size: 43.75rem;
+  inline-size: 100%;
+  min-inline-size: auto;
   border-left: 2px solid var(--main-color, #000);
   border-right: 2px solid var(--main-color, #000);
 }
@@ -202,35 +202,35 @@
     -1px -1px 0px var(--background-color);
 }
 
-.drama-filter {
+.brightness-filter {
   filter: brightness(70%);
 }
 
-.desperate-filter {
+.contrast-filter {
   filter: contrast(20%);
 }
 
-.distracted-filter {
+.blur-filter {
   filter: blur(2px);
 }
 
-.happy-filter {
+.invert-filter {
   filter: invert(30);
 }
 
-.strange-filter {
+.grayscale-filter {
   filter: grayscale(50%);
 }
 
-.color-filter {
+.hue-rotate-filter {
   filter: hue-rotate(-90deg);
 }
 
-.sad-filter {
+.sepia-filter {
   filter: sepia(80%);
 }
 
-.multi-filter {
+.contrast-brightnness-filter {
   filter: contrast(1.5) brightness(130%);
 }
 
@@ -245,24 +245,17 @@
   }
 }
 
-.footer {
+.save__button-area {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-block: 3em;
+  margin-block: 3em 6em;
 }
 
 .save__button {
-  display: flex;
   inline-size: 340px;
   block-size: 55px;
-  border: 2px solid var(--main-color, #000);
-  justify-content: center;
-  align-items: center;
   gap: 8px;
-  background-color: var(--background-color);
-  position: relative;
-  overflow: hidden;
 }
 
 .floppy-icon {
@@ -274,26 +267,31 @@
   z-index: 3;
 }
 
-.popup-card[open] {
-  display: flex;
+.popup-card {
   flex-direction: column;
-  gap: 30px;
   max-inline-size: 353px;
-  inline-size: 80%;
+  inline-size: 100%;
   min-inline-size: 341px;
   justify-content: center;
   align-items: center;
+  padding: 30px;
+  gap: 30px;
+  overflow: hidden;
+}
+
+.popup-card[open] {
+  display: flex;
 }
 
 .popup-card::backdrop {
-  background-color: rgb(0 0 0 / 0.8);
+  background-color: rgb(0 0 0 / 0.75);
 }
 
 .button__popup {
-  padding-block: 13px;
-  padding-inline: 133px;
-  position: relative;
-  overflow: hidden;
+  padding-block: 12px;
+  width: 293px;
+  height: 38px;
+  max-inline-size: 100%
 }
 
 .popup__title {
@@ -307,8 +305,10 @@
   display: flex;
   gap: 20px;
   justify-content: center;
-  margin-block-start: 30px;
-  margin-inline: 15px;
+}
+
+.button__popup-text {
+  text-transform: uppercase;
 }
 
 .popup__floppy-icon {
@@ -316,30 +316,15 @@
   aspect-ratio: 1 / 1;
 }
 
-.button__popup.content__button,
-.content__button .content__border {
-  border: 2px solid var(--main-color, #000);
-}
-
 .content__button:focus {
   outline: none;
 }
 
-.card__like-button:focus,
-.save__button:focus,
-.button__popup:focus {
+.content__button:focus {
   box-shadow: 2px 2px 0 var(--main-color);
 }
 
-.card__like-button,
-.save__button,
-.button__popup {
-  transition: box-shadow 0.3s ease;
-}
-
-.card__like-button::before,
-.save__button::before,
-.button__popup::before {
+.content__button-hover-element::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -349,40 +334,51 @@
   z-index: 0;
 }
 
-.card__like-button:hover::before,
-.save__button:hover::before,
-.button__popup:hover::before {
+.content__button-hover-element:hover::before {
   transform: translateX(0%);
 }
 
-.card__icon-button:focus-visible {
+.card__icon-button:focus-visible, .card__icon-button:focus {
   border: 2px solid var(--main-color, #000);
+  box-shadow: none;
 }
 
 .sparks {
   opacity: 0%;
 }
 
-.core {
-  transition: fill 0.3s 0.03s;
+.core, .main-body {
+  transition: fill 0.3s linear;
 }
 
-.main-body {
-  transition: fill 0.3s 0.05s;
+.card__icon-button:hover .core {
+  fill: var(--contour-color);
+  transition-delay: 0s;
 }
 
-.card__icon-button:hover .core,
 .card__icon-button:hover .main-body {
   fill: var(--contour-color);
+  transition-delay: 0.05s;
 }
 
 .card__icon-button:not(:hover) .main-body {
-  transition-delay: 0;
+  transition-delay: 0s;
+  fill: var(--background-color);
 }
 
-.card__icon-button:active .core,
+.card__icon-button:not(:hover) .core {
+  transition-delay: 0.03s;
+  fill: var(--background-color);
+}
+
+.card__icon-button:active .core {
+  fill: var(--animation-fill-color);
+  transition-delay: 0s;
+}
+
 .card__icon-button:active .main-body {
   fill: var(--animation-fill-color);
+  transition-delay: 0.05s;
 }
 
 .like-icon.is-liked .core,
@@ -390,48 +386,17 @@
   fill: var(--animation-fill-color);
 }
 
-.contour {
-  transition: fill 0.3s 0.06s;
-}
-
 .like-icon.is-liked .contour {
   fill: var(--animation-fill-color);
-}
-
-@keyframes heart-scale {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.25);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes sparks-opacity {
-  0% {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
+  transition: fill 0.3s 0.06s linear;
 }
 
 .like-icon.is-liked {
-  animation: heart-scale 0.3s ease-in 0.1s;
+  animation: scale-in-and-out 0.3s ease-in 0.1s;
 }
 
 .like-icon.is-liked .sparks {
-  animation: sparks-opacity 0.3s ease-in 0.3s;
+  animation: opacity-appear-then-fade-out 0.3s ease-in 0.3s;
 }
 
 .like-icon:not(.is-liked) .contour {
@@ -440,16 +405,16 @@
 
 @media (width <= 375px) {
   .header__content {
-    block-size: 20.45em;
+    padding-block: 7.5em;
   }
 
   .content__decor {
     block-size: 23.2em;
-    inline-size: 23.5em;
   }
 
   .content {
-    gap: 51px;
+    gap: 49.5px;
+    margin-block-start: 6.25em;
   }
 
   .title {
@@ -461,7 +426,7 @@
   }
 
   .card__text {
-    padding-inline: 26px;
+    padding-inline: 26px 25px;
   }
 
   .card__text:last-child {
@@ -469,7 +434,7 @@
   }
 
   .card__text:first-child {
-    margin-block-start: 25px;
+    margin-block-start: 25.3px;
   }
 
   .card__buttons {
@@ -478,9 +443,13 @@
 
   .save__button {
     flex-direction: column;
-    block-size: 5.4em;
-    inline-size: 19.5em;
+    max-inline-size: 22em;
+    block-size: 6em;
     gap: 9px;
+  }
+
+  .save__button-area {
+    margin-block-start: 3.3em;
   }
 
   .floppy-icon {
@@ -490,9 +459,5 @@
 
   .watermark {
     right: 12px;
-  }
-
-  .card:last-child .card__buttons {
-    margin-block: 20px 30.5px;
   }
 }
