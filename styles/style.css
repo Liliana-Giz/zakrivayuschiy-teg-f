@@ -318,9 +318,6 @@
 
 .content__button:focus {
   outline: none;
-}
-
-.content__button:focus {
   box-shadow: 2px 2px 0 var(--main-color);
 }
 
